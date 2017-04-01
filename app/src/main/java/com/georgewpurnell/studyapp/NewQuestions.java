@@ -1,14 +1,13 @@
 package com.georgewpurnell.studyapp;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
+import static com.georgewpurnell.studyapp.R.id.multChoiceBtn;
 
 public class NewQuestions extends AppCompatActivity {
 
@@ -16,42 +15,57 @@ public class NewQuestions extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_questions);
+        Button home = (Button) findViewById(R.id.homeNewQuestions);
+        final Button fillInBlankButton = (Button) findViewById(R.id.fillBlankBtn);
+        final Button multChoiceButton = (Button) findViewById(multChoiceBtn);
+        final Button trueFalseButton = (Button) findViewById(R.id.trueFalseBtn);
 
-        Button fillInBlankButton = (Button) findViewById(R.id.fillBlankBtn);
-        Button multChoiceBtn = (Button) findViewById(R.id.multChoiceBtn);
-        Button trueFalseBtn = (Button) findViewById(R.id.trueFalseBtn);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(MainActivity.createIntent(NewQuestions.this));
+                finish();
+            }
+        });
 
         fillInBlankButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                launchActivity(FillInBlank);
+                startActivity(FillInBlank.createIntent(NewQuestions.this));
+                finish();
 
             }
         });
 
-
-        multChoiceBtn.setOnClickListener(new View.OnClickListener() {
+        multChoiceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(this, MultipleChoice.class);
-                startActivity(intent);
+                startActivity(MultipleChoice.createIntent(NewQuestions.this));
+                finish();
 
             }
         });
 
-        trueFalseBtn.setOnClickListener(new View.OnClickListener() {
+        trueFalseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(this, TrueFalse.class);
-                startActivity(intent);
-
+                startActivity(TrueFalse.createIntent(NewQuestions.this));
+                finish();
             }
         });
 
-        private void launchActivity(Activity activity) {
-
-            Intent intent = new Intent(this, activity.class);
-            startActivity(intent);
-        }
+//        if (getIntent().getExtras() != null) {
+//            uid = getIntent().getStringExtra("uid");
+//        }
     }
-}
+
+    public static Intent createIntent(Context context) {
+        Intent intent = new Intent(context, NewQuestions.class);
+
+        //intent.putExtra("uid", uid);
+        return intent;
+    }
+
+    }
+
+

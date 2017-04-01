@@ -1,12 +1,11 @@
 package com.georgewpurnell.studyapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +13,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final Button newQuestionButton = (Button) findViewById(R.id.newQuestionBtn);
+
+        newQuestionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(NewQuestions.createIntent(MainActivity.this));
+                finish();
+            }
+        });
 
     }
-}
+
+    public static Intent createIntent(Context context) {
+        Intent intent = new Intent(context, MainActivity.class);
+
+        //intent.putExtra("uid", uid);
+        return intent;
+    }}
