@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.georgewpurnell.studyapp.FillInBlank">
+
+    <EditText
+        android:id="@+id/fillInBlankQuestion1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter Your Question"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/fillInBlankAnswer1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fillInBlankHeader" />
+
+    <EditText
+        android:id="@+id/fillInBlankAnswer1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Answer "
+        android:inputType="textMultiLine"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fillInBlankQuestion1"
+        android:layout_marginTop="-1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/fillInBlankHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fill In The Blank Questions"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/fillInBlankQuestion1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
