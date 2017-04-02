@@ -68,7 +68,8 @@ public class MultipleChoice extends AppCompatActivity {
                 if (wrongAnswerText4.getText() != null) {
                     wrongAnswerList.add(wrongAnswerText4.getText().toString());
                 }
-                System.out.println(wrongAnswerList.toString());
+                QuestionRepository.putInRepository(question, answer);
+                QuestionRepository.putMultipleChoiceIntoRepository(question, wrongAnswerList);
                 questionText.setText(null);
                 correctAnswerText.setText(null);
                 wrongAnswerText1.setText(null);

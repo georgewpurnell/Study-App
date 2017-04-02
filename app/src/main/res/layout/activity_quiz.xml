@@ -20,7 +20,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.126" />
+        app:layout_constraintVertical_bias="0.041" />
 
 
 
@@ -38,7 +38,8 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.923" />
+        app:layout_constraintVertical_bias="0.982"
+        app:layout_constraintHorizontal_bias="0.028" />
 
     <Button
         android:id="@+id/submitQuiz"
@@ -49,11 +50,12 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.814"
+        app:layout_constraintHorizontal_bias="0.971"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.467" />
 
     <RadioGroup
         android:layout_width="wrap_content"
@@ -63,20 +65,18 @@
 
     <RadioGroup
         android:id="@+id/answerGroupQuiz"
-        android:layout_width="370dp"
-        android:layout_height="311dp"
+        android:layout_width="259dp"
+        android:layout_height="354dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.497"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="100dp">
+        app:layout_constraintHorizontal_bias="0.0"
+        tools:layout_editor_absoluteY="58dp">
 
         <RadioButton
             android:id="@+id/answerQuiz1"
@@ -145,7 +145,7 @@
         <RadioButton
             android:id="@+id/answerQuiz5"
             android:layout_width="174dp"
-            android:layout_height="match_parent"
+            android:layout_height="46dp"
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
@@ -159,6 +159,22 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.73" />
     </RadioGroup>
+
+    <Button
+        android:id="@+id/nextQuestionQuiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Next Question"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.966"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.982" />
 
 
 </android.support.constraint.ConstraintLayout>
