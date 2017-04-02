@@ -2,12 +2,19 @@ package com.georgewpurnell.studyapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    TextView studyTimeT;
+    Button newFlash;
+    Button newQuiz;
+    Button newLearn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +38,16 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+        studyTimeT = (TextView) findViewById(R.id.studyTime);
+        newFlash = (Button) findViewById(R.id.flashCardBtn);
+        newQuiz = (Button) findViewById(R.id.quizBtn);
+        newLearn = (Button) findViewById(R.id.learnMoreBtn);
+        Typeface myCustomFont=Typeface.createFromAsset(getAssets(),"fonts/DANCING-JUNGLE.ttf");
+        studyTimeT.setTypeface(myCustomFont);
+        newQuestionButton.setTypeface(myCustomFont);
+        newFlash.setTypeface(myCustomFont);
+        newQuiz.setTypeface(myCustomFont);
+        newLearn.setTypeface(myCustomFont);
 
     }
 

@@ -2,17 +2,20 @@ package com.georgewpurnell.studyapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class MultipleChoice extends AppCompatActivity {
     String question, answer;
     ArrayList<String> wrongAnswerList = new ArrayList<String>();
+    TextView Head;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,7 +80,20 @@ public class MultipleChoice extends AppCompatActivity {
 
             }
         });
+        Head = (TextView) findViewById(R.id.multChoiceView);
 
+        Typeface myCustomFont=Typeface.createFromAsset(getAssets(),"fonts/DANCING-JUNGLE.ttf");
+        questionText.setTypeface(myCustomFont);
+        correctAnswerText.setTypeface(myCustomFont);
+        wrongAnswerText1.setTypeface(myCustomFont);
+        wrongAnswerText2.setTypeface(myCustomFont);
+        wrongAnswerText2.setTypeface(myCustomFont);
+        wrongAnswerText3.setTypeface(myCustomFont);
+        wrongAnswerText4.setTypeface(myCustomFont);
+        enter.setTypeface(myCustomFont);
+        home.setTypeface(myCustomFont);
+        newQuestionType.setTypeface(myCustomFont);
+        Head.setTypeface(myCustomFont);
 
     }
 

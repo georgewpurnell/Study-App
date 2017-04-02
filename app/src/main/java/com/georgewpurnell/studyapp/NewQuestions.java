@@ -2,15 +2,17 @@ package com.georgewpurnell.studyapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import static com.georgewpurnell.studyapp.R.id.multChoiceBtn;
 
 public class NewQuestions extends AppCompatActivity {
-
+    TextView newQuest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +59,13 @@ public class NewQuestions extends AppCompatActivity {
 //        if (getIntent().getExtras() != null) {
 //            uid = getIntent().getStringExtra("uid");
 //        }
+        newQuest= (TextView) findViewById(R.id.newQuestionHeader);
+        Typeface myCustomFont=Typeface.createFromAsset(getAssets(),"fonts/DANCING-JUNGLE.ttf");
+        trueFalseButton.setTypeface(myCustomFont);
+        multChoiceButton.setTypeface(myCustomFont);
+        fillInBlankButton.setTypeface(myCustomFont);
+        home.setTypeface(myCustomFont);
+        newQuest.setTypeface(myCustomFont);
     }
 
     public static Intent createIntent(Context context) {
