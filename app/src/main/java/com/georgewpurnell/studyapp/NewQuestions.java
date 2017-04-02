@@ -22,6 +22,16 @@ public class NewQuestions extends AppCompatActivity {
         final Button multChoiceButton = (Button) findViewById(multChoiceBtn);
         final Button trueFalseButton = (Button) findViewById(R.id.trueFalseBtn);
 
+        newQuest = (TextView) findViewById(R.id.newQuestionHeader) ;
+
+
+        Typeface myCustomFont=Typeface.createFromAsset(getAssets(),"fonts/DANCING-JUNGLE.ttf");
+        home.setTypeface(myCustomFont);
+        fillInBlankButton.setTypeface(myCustomFont);
+        multChoiceButton.setTypeface(myCustomFont);
+        trueFalseButton.setTypeface(myCustomFont);
+        newQuest.setTypeface(myCustomFont);
+
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,13 +69,7 @@ public class NewQuestions extends AppCompatActivity {
 //        if (getIntent().getExtras() != null) {
 //            uid = getIntent().getStringExtra("uid");
 //        }
-        newQuest= (TextView) findViewById(R.id.newQuestionHeader);
-        Typeface myCustomFont=Typeface.createFromAsset(getAssets(),"fonts/DANCING-JUNGLE.ttf");
-        trueFalseButton.setTypeface(myCustomFont);
-        multChoiceButton.setTypeface(myCustomFont);
-        fillInBlankButton.setTypeface(myCustomFont);
-        home.setTypeface(myCustomFont);
-        newQuest.setTypeface(myCustomFont);
+
     }
 
     public static Intent createIntent(Context context) {
@@ -74,6 +78,9 @@ public class NewQuestions extends AppCompatActivity {
         //intent.putExtra("uid", uid);
         return intent;
     }
+
+
+
 
     }
 
