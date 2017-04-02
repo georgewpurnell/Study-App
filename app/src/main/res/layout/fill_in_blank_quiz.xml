@@ -84,8 +84,18 @@
         android:layout_height="wrap_content"
         android:text="Fill In The Blank"
         android:textSize="36sp"
-        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteX="66dp"
         tools:layout_editor_absoluteY="30dp" />
+
+    <EditText
+        android:id="@+id/answerFillInTheBlankQuiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Type Answer"
+        android:inputType="textShortMessage|textPersonName"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="199dp" />
 
 
 </android.support.constraint.ConstraintLayout>
