@@ -13,25 +13,34 @@ import java.util.ArrayList;
 public class FlashCard extends AppCompatActivity {
     int currentIndex;
     String question, answer;
-    ArrayList<String> questionList = QuestionRepository.getKeyList();
+    ArrayList<String> questionList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flash_card);
-        System.out.println(questionList.toString());
-        System.out.println(questionList.get(0));
-        currentIndex = 0;
-        question = questionList.get(0);
-        answer = QuestionRepository.getAnswer(question);
 
         Button home = (Button) findViewById(R.id.homeFlashCard);
         Button nextCard = (Button) findViewById(R.id.nextCard);
         final Button showAnswer = (Button) findViewById(R.id.showAnswer);
         final TextView questionAnswer = (TextView) findViewById(R.id.questionAnswerFlashCard);
 
-        showAnswer.setText("Show Answer");
-        questionAnswer.setText(question);
+        if (QuestionRepository.getKeyList().size() == 0){
+          questionAnswer.setText("Please Add Questions To Use This Function");
+          showAnswer.setVisibility(View.GONE);
+        }
+        else {
+            questionList = QuestionRepository.getKeyList();
+            currentIndex = 0;
+            question = questionList.get(0);
+            answer = QuestionRepository.getAnswer(question);
+            questionAnswer.setText(question);
+            showAnswer.setText("Show Answer");
+            showAnswer.setVisibility(View.VISIBLE);
+        }
+
+
+
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
