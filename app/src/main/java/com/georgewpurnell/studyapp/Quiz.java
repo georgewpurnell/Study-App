@@ -74,6 +74,7 @@ public class Quiz extends AppCompatActivity {
                 answer = QuestionRepository.getAnswer(question);
                 questionText.setText(question);
                 answerGroup.setVisibility(View.VISIBLE);
+                answerGroup.clearCheck();
 
 
             }
