@@ -30,6 +30,7 @@ public class FlashCard extends AppCompatActivity {
         if (QuestionRepository.getKeyList().size() == 0){
           questionAnswer.setText("Please Add Questions To Use This Function");
           showAnswer.setVisibility(View.GONE);
+          nextCard.setVisibility(View.GONE);
         }
         else {
             questionList = QuestionRepository.getKeyList();

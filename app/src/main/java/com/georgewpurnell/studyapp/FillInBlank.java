@@ -54,6 +54,7 @@ public class FillInBlank extends AppCompatActivity {
             public void onClick(View v) {
                 question = questionText.getText().toString();
                 answer = answerText.getText().toString();
+                QuestionRepository.putInRepository(question,answer);
                 questionText.setText(null);
                 answerText.setText(null);
             }
