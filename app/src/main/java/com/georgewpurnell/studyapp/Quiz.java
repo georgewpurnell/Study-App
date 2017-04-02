@@ -10,42 +10,50 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import static com.georgewpurnell.studyapp.R.id.nextCard;
-import static com.georgewpurnell.studyapp.R.id.showAnswer;
+import java.util.ArrayList;
 
 public class Quiz extends AppCompatActivity {
+
+    int currentIndex;
+    String question, answer;
+    ArrayList<String> questionList;
+    ArrayList<String> answerList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        if (QuestionRepository.getKeyList().size() == 0 && QuestionRepository.getMultipleChoiceKeyList().size() == 0){
+        Button home = (Button) findViewById(R.id.homeQuiz);
+        Button submit = (Button) findViewById(R.id.submitQuiz);
+        Button nextQuestion = (Button) findViewById(R.id.nextQuestionQuiz);
+        final TextView questionText = (TextView)findViewById(R.id.questionQuiz);
+        RadioButton answer1 = (RadioButton) findViewById(R.id.answerQuiz1);
+        RadioButton answer2 = (RadioButton) findViewById(R.id.answerQuiz2);
+        RadioButton answer3 = (RadioButton) findViewById(R.id.answerQuiz3);
+        RadioButton answer4 = (RadioButton) findViewById(R.id.answerQuiz4);
+        RadioButton answer5 = (RadioButton) findViewById(R.id.answerQuiz5);
+        final RadioGroup answerGroup = (RadioGroup) findViewById(R.id.answerGroupQuiz) ;
+
+        if (QuestionRepository.getKeyList().size() == 0 ){
             questionText.setText("Please Add Questions To Use This Function");
             submit.setVisibility(View.GONE);
-            nextCard.setVisibility(View.GONE);
+            nextQuestion.setVisibility(View.GONE);
+            if(QuestionRepository.getMultipleChoiceKeyList().size() != 0){
+                answerList = QuestionRepository.getMultipleChoiceKeyList();
+            }
         }
         else {
             questionList = QuestionRepository.getKeyList();
             currentIndex = 0;
             question = questionList.get(0);
             answer = QuestionRepository.getAnswer(question);
-            questionAnswer.setText(question);
+            questionText.setText(question);
             submit.setVisibility(View.VISIBLE);
-            showAnswer.setText("Show Answer");
-            showAnswer.setVisibility(View.VISIBLE);
+            nextQuestion.setVisibility(View.VISIBLE);
         }
 
-        Button home = (Button) findViewById(R.id.homeQuiz);
-        Button submit = (Button) findViewById(R.id.submitQuiz);
-        Button nextQuestion = (Button) findViewById(R.id.nextQuestionQuiz);
-        TextView questionText = (TextView)findViewById(R.id.questionQuiz);
-        RadioButton answer1 = (RadioButton) findViewById(R.id.answerQuiz1);
-        RadioButton answer2 = (RadioButton) findViewById(R.id.answerQuiz2);
-        RadioButton answer3 = (RadioButton) findViewById(R.id.answerQuiz3);
-        RadioButton answer4 = (RadioButton) findViewById(R.id.answerQuiz4);
-        RadioButton answer5 = (RadioButton) findViewById(R.id.answerQuiz5);
-        RadioGroup answerGroup = (RadioGroup) findViewById(R.id.answerGroupQuiz) ;
+
 
 
 
@@ -64,8 +72,18 @@ public class Quiz extends AppCompatActivity {
                 currentIndex = (currentIndex + 1) % questionList.size();
                 question = questionList.get(currentIndex);
                 answer = QuestionRepository.getAnswer(question);
-                questionAnswer.setText(question);
-                showAnswer.setText("Show Answer");
+                questionText.setText(question);
+                answerGroup.setVisibility(View.VISIBLE);
+
+
+            }
+        });
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                answerGroup.setVisibility(View.GONE);
+                questionText.setText(answer);
 
             }
         });
