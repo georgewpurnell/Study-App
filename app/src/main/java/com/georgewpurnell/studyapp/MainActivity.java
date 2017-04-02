@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final Button newQuestionButton = (Button) findViewById(R.id.newQuestionBtn);
         final Button flashCardsButton = (Button) findViewById(R.id.flashCardBtn);
+        final Button quizButton = (Button) findViewById(R.id.quizBtn);
 
         newQuestionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +39,15 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        quizButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(Quiz.createIntent(MainActivity.this));
+                finish();
+            }
+        });
+
         studyTimeT = (TextView) findViewById(R.id.studyTime);
         newFlash = (Button) findViewById(R.id.flashCardBtn);
         newQuiz = (Button) findViewById(R.id.quizBtn);
