@@ -20,6 +20,8 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.splash_screen);
         final ImageView moveText = (ImageView) findViewById(R.id.disk);
         Animation moveAnimation = AnimationUtils.loadAnimation(this, R.anim.move_text);
+        moveAnimation.setRepeatCount(0);
+        //moveAnimation.setDuration(5000);
         moveText.startAnimation(moveAnimation);
         moveAnimation.setAnimationListener(new Animation.AnimationListener(){
             @Override
@@ -27,8 +29,6 @@ public class SplashScreen extends AppCompatActivity {
             }
             @Override
             public void onAnimationRepeat(Animation arg0) {
-                startActivity(MainActivity.createIntent(SplashScreen.this));
-                finish();
             }
             @Override
             public void onAnimationEnd(Animation arg0) {
@@ -36,6 +36,13 @@ public class SplashScreen extends AppCompatActivity {
                 finish();
             }
         });
+        /*moveText.animate().withEndAction(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(MainActivity.createIntent(SplashScreen.this));
+                finish();
+            }
+        });*/
     }
     public static Intent createIntent(Context context) {
         Intent intent = new Intent(context, SplashScreen.class);

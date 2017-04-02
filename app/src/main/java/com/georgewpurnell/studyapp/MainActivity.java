@@ -22,9 +22,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         /*if (num == 1){
+            num++;
             startActivity(SplashScreen.createIntent(MainActivity.this));
             finish();
-            num++;
+
         }*/
         final Button newQuestionButton = (Button) findViewById(R.id.newQuestionBtn);
         final Button flashCardsButton = (Button) findViewById(R.id.flashCardBtn);
