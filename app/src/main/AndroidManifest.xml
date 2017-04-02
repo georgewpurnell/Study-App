@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".NewQuestions" />
+        <activity android:name=".SplashScreen"/>
         <activity android:name=".Quiz" />
         <activity android:name=".FlashCard" />
         <activity android:name=".LearnMore" />

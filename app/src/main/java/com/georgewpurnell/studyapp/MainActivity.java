@@ -14,12 +14,18 @@ public class MainActivity extends AppCompatActivity {
     Button newFlash;
     Button newQuiz;
     Button newLearn;
+    int num = 1;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /*if (num == 1){
+            startActivity(SplashScreen.createIntent(MainActivity.this));
+            finish();
+            num++;
+        }*/
         final Button newQuestionButton = (Button) findViewById(R.id.newQuestionBtn);
         final Button flashCardsButton = (Button) findViewById(R.id.flashCardBtn);
         final Button quizButton = (Button) findViewById(R.id.quizBtn);
