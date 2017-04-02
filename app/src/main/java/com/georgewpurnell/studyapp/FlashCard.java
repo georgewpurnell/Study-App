@@ -2,6 +2,7 @@ package com.georgewpurnell.studyapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,6 +16,7 @@ public class FlashCard extends AppCompatActivity {
     String question, answer;
     ArrayList<String> questionList;
 
+    TextView questionAnswery;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +79,17 @@ public class FlashCard extends AppCompatActivity {
                 };
             }
         });
+
+        questionAnswery = (TextView)findViewById(R.id.questionAnswerFlashCard) ;
+        Typeface myCustomFont=Typeface.createFromAsset(getAssets(),"fonts/DANCING-JUNGLE.ttf");
+        home.setTypeface(myCustomFont);
+        nextCard.setTypeface(myCustomFont);
+        showAnswer.setTypeface(myCustomFont);
+        questionAnswer.setTypeface(myCustomFont);
+        questionAnswery.setTypeface(myCustomFont);
+
+
+
     }
 
     public static Intent createIntent(Context context) {
