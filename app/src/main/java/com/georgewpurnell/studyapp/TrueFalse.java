@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class TrueFalse extends AppCompatActivity {
+    String question, answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,8 +18,8 @@ public class TrueFalse extends AppCompatActivity {
 //        if (getIntent().getExtras() != null) {
 //            uid = getIntent().getStringExtra("uid");
 //        }
-        EditText question = (EditText) findViewById(R.id.trueFalseQuestion);
-        EditText answer = (EditText) findViewById(R.id.trueFalseAnswer);
+        final EditText questionText = (EditText) findViewById(R.id.trueFalseQuestion);
+        final EditText answerText = (EditText) findViewById(R.id.trueFalseAnswer);
         Button home = (Button) findViewById(R.id.homeTrueFalse);
         Button enter = (Button) findViewById(R.id.enterTrueFalse);
         Button newQuestionType = (Button) findViewById(R.id.newQuestionTypeTrueFalse);
@@ -36,6 +37,17 @@ public class TrueFalse extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(NewQuestions.createIntent(TrueFalse.this));
                 finish();
+            }
+        });
+
+        enter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                question = questionText.getText().toString();
+                answer = answerText.getText().toString();
+                QuestionRepository.putInRepository(question,answer);
+                questionText.setText(null);
+                answerText.setText(null);
             }
         });
 

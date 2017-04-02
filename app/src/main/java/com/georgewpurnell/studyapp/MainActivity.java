@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final Button newQuestionButton = (Button) findViewById(R.id.newQuestionBtn);
+        final Button flashCardsButton = (Button) findViewById(R.id.flashCardBtn);
 
         newQuestionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -23,7 +24,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        flashCardsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(FlashCard.createIntent(MainActivity.this));
+                finish();
+            }
+        });
+
     }
+
+
 
     public static Intent createIntent(Context context) {
         Intent intent = new Intent(context, MainActivity.class);
