@@ -9,11 +9,11 @@
 
     <Button
         android:id="@+id/trueFalseBtn"
-        android:layout_width="151dp"
-        android:layout_height="55dp"
+        android:layout_width="190dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/tinybut"
+        android:background="@drawable/coded_button"
         android:text="True or False"
         android:textColor="@color/colorAccent"
         android:textSize="18sp"
@@ -26,11 +26,11 @@
 
     <Button
         android:id="@+id/multChoiceBtn"
-        android:layout_width="151dp"
-        android:layout_height="55dp"
+        android:layout_width="190dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/img"
+        android:background="@drawable/coded_button"
         android:text="Multiple Choice"
         android:textColor="@color/colorAccent"
         android:textSize="18sp"
@@ -38,16 +38,15 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.527"
-        app:layout_constraintHorizontal_bias="0.502" />
+        app:layout_constraintVertical_bias="0.54" />
 
     <Button
         android:id="@+id/fillBlankBtn"
-        android:layout_width="151dp"
-        android:layout_height="55dp"
+        android:layout_width="190dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/img"
+        android:background="@drawable/coded_button"
         android:text="Fill in the Blank"
         android:textColor="@color/colorAccent"
         android:textSize="18sp"
@@ -55,7 +54,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.685" />
+        app:layout_constraintVertical_bias="0.719" />
 
     <TextView
         android:id="@+id/newQuestionHeader"
